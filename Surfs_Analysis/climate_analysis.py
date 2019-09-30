@@ -25,8 +25,7 @@ Measurement = Base.classes.measurement
 
 # Create our session (link) from Python to the DB
 session = Session(engine)
-engine.execute('SELECT * FROM Station LIMIT 5').fetchall()
-engine.execute('SELECT * FROM Measurement LIMIT 5').fetchall()
+
 
 # Flask Setup
 #############
@@ -34,6 +33,17 @@ app = Flask(__name__)
 
 ##############
 # Flask Routes
+@app.route("/")
+def welcome():
+    return (
+        f"Welcome to the Hawaii Climate Analysis API!<br/>"
+        f"Available Routes:<br/>"
+        f"/api/v1.0/precipitation<br/>"
+        f"/api/v1.0/stations<br/>"
+        f"/api/v1.0/tobs<br/>"
+        f"/api/v1.0/temp/start/end"
+    )
+    
 @app.route("/api/v1.0/precipitation")
 def precipitation():
     """Return a list of precipitation fall for last year"""
@@ -106,7 +116,5 @@ def temp_start_end(start, end):
 
     return jsonify(temp_start_end)
 
-
 if __name__ == "__main__":
     app.run(debug=True)
-
