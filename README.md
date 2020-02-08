@@ -1,4 +1,4 @@
-# Cliamte Analysis & Exploration
+# Climate Analysis & Exploration
 
 # Tools / Technologies used:
 
