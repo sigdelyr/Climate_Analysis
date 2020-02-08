@@ -13,10 +13,15 @@ In this project, I will analyze the climate for Hawaii's for a long holiday vacc
 Flask app was designed to analyze the Hawaii climate data. It included the following routes:
 
 /
+
 /api/v1.0/precipitation
+
 /api/v1.0/stations
+
 /api/v1.0/tobs
+
 /api/v1.0/< start >
+
 /api/v1.0/< start >/< end >
 
 
